@@ -1,0 +1,476 @@
+* {  
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+
+    /* Первый символ каждого слова в предложении будет заглавным. */
+    /* text-transform: capitalize; */
+    transition: all .2s linear;
+    font-family: "Nunito", sans-serif;
+} 
+p {
+    text-indent: 25px;
+    text-align: justify;
+}
+strong {
+    color: #e1d85b;
+}
+
+:root {
+    --main-clr: #e1d85b;
+    --box-shadow: 0rem .5rem .5rem rgba(0, 0, 0, .3);
+
+    /* размытие */
+    --glowing-bxs: 0 0 .3rem #Ae8625,
+    0 0 .4rem #Ae8625,
+    0 0 .5rem #Ae8625,
+    0 0 .6rem #Ae8625;
+
+    /* адаптивность шрифта  */
+    --heading: calc(25px + (50 - 25) * ((100vw - 300px) / (1500 - 300)));
+    --big-fz: calc(30px + (100 - 30) * ((100vw - 300px) / (1500 - 300)));
+    --large-fz: calc(30px + (80 - 30) * ((100vw - 300px) / (1500 - 300)));
+    --large2-fz: calc(20px + (70 - 20) * ((100vw - 300px) / (1500 - 300)));
+    --medium-fz: calc(16px + (20 - 16) * ((100vw - 300px) / (1500 - 300)));
+    --small-fz: calc(12px + (16 - 12) * ((100vw - 300px) / (1500 - 300)));
+    --h3-fz: calc(14px + (25 - 14) * ((100vw - 300px) / (1500 - 300)));
+    --user-name-fz: calc(14px + (30 - 14) * ((100vw - 300px) / (1500 - 300)));
+    --info-box-fz: calc(14px + (40 - 14) * ((100vw - 300px) / (1500 - 300)));
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    /* плавное переключение по секциям */
+    scroll-behavior: smooth;
+}
+img {
+    /* мах ширина */
+    max-width: 100%;
+}
+
+.asrto_logo {
+    max-width: 100%;
+}
+
+body {
+    background: #222;
+    padding-left: 33rem;   
+}
+
+
+body {
+    --sb-track-color: #222;
+    --sb-thumb-color: #e1d85b;
+    --sb-size: 1rem;
+}
+
+body::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 1rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 1rem;
+}
+
+section {
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.btn {
+    padding: 0.7rem 3rem;
+    background: #0d1117;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    font-size: var(--medium-fz);
+}
+
+.btn i {
+    padding: 0rem 0.5rem;
+    font-size: var(--small-fz);
+}
+
+.btn:hover {
+    background: var(--main-clr);
+    box-shadow: var(--glowing-bxs);
+}
+
+
+.heading {
+    text-align: center;
+    margin: 3rem 0rem;
+    font-size: var(--heading);
+    padding: 1rem;
+    color: #fff;
+    border-bottom: .1rem solid #fff4ff;
+}
+
+.heading span {
+    color: var(--main-clr);
+
+}
+
+/* header section start */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 102%;
+    width: 35rem;
+    background: #0d1117;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    z-index: 1000;
+}
+
+header .user img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border: .7rem solid var(--main-clr);
+    box-shadow: var(--glowing-bxs);
+}
+
+
+
+header .user .name {
+    color: #fff;
+    font-size: var(--user-name-fz);
+}
+
+header .user p {
+    color: #fff;
+    font-size: var(--medium-fz);
+}
+
+header .navbar {
+    width: 90%;
+    overflow-y: scroll;
+}
+header .navbar::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+header .navbar::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 1rem;
+}
+
+header .navbar::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 1rem;
+}
+
+header .navbar ul {
+    /* убрать маркеры списка */
+    list-style: none;
+    padding: 1rem 3rem;
+}
+
+header .navbar ul li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    margin: 0.5rem 0rem;
+    background: #333;
+    color: #fff;
+    font-size: var(--medium-fz);
+    border-radius: 1rem;
+}
+
+header .navbar ul li a:hover {
+    background: var(--main-clr);
+    box-shadow: var(--glowing-bxs);
+}
+
+/* список в списке меню */
+
+
+/* nav ul li ul  {
+    display: none;
+} */
+/* nav ul li:hover > ul {
+    display: initial;
+} */
+
+.menu1 ul li {
+    transition: 0.3s;
+}
+
+.menu-hidden {
+    display: none;
+}
+
+.menu2 ul li {
+    transition: 0.3s;
+}
+
+.menu-hidden2 {
+    display: none;
+}
+
+.menu-hidden3 {
+    display: none;
+}
+
+.menu-hidden4 {
+    display: none;
+}
+
+.menu-hidden5 {
+    display: none;
+}
+
+
+/* кнопка меню  */
+#menu {
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: var(--medium-fz);
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    border-radius: 0.5rem;
+    /* скрыть кнопку */
+    display: none;
+}
+
+/* header section end */
+
+
+/* home section start */
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 15rem;
+}
+
+.home h3 {
+    font-size: var(--large-fz);
+    color: #fff;
+}
+
+.home p {
+    font-size: var(--medium-fz);
+    color: #fff;
+    padding: 1rem 0rem;
+}
+/* ______home section end________ */
+
+
+/* Main section start */
+
+.Main .box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0rem;
+    padding-left: 1rem;
+}
+
+.Main .box-container p {
+    font-size: var(--medium-fz);
+    color: #fff;
+    padding: 2rem 4rem;
+}
+
+.Main .box-container .box {
+    flex: 1 1 25rem;
+    height: 37rem;
+    border-radius: 2rem;
+    border: .5rem solid var(--main-clr);
+    margin: 2rem;
+    box-shadow: var(--glowing-bxs);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.Main .box-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.Main .box-container .box1 {
+    /* height: 27rem; */
+    border-radius: 2rem;
+    border: .5rem solid var(--main-clr);
+    margin: 2rem;
+    box-shadow: var(--glowing-bxs);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.Main .box-container .box1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ______Main section end________ */
+
+/* contact section start */
+
+.contact .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact .row .content {
+    flex: 1 1 30rem;
+    padding: 4rem;
+    padding-bottom: 0;
+}
+
+.contact .row .content h3 {
+    color: #fff;
+    font-size: var(--h3-fz);
+}
+
+.contact .row .content .info h4 {
+    color: #fff;
+    font-size: var(--small-fz);
+    text-transform: none;
+    margin: 1.5rem 0rem;
+    padding: 1rem;
+}
+
+.contact .row .content .info i {
+    color: var(--main-clr);
+    padding-right: 1rem;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 2rem;
+    margin: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact .row form .input-box {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    background: var(--main-clr);
+    color: #fff;
+    text-transform: none;
+}
+
+.contact .row form textarea {
+    height: 20rem;
+    resize: none;
+}
+
+
+
+/* ______contact section end______ */
+
+/* footer section start */
+
+.social-links {
+    text-align: center;
+    padding: 0rem 0rem 3rem;
+}
+
+.social-links a {
+    margin: 0rem 0.3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    background-color: #fff;
+    /* убрать подчеркивание ссылок */
+    text-decoration: none;
+    border-radius: 50%;
+    color: #000;
+    font-size: var(--medium-fz);
+}
+
+.social-links a:hover {
+    background-color: var(--main-clr);
+    box-shadow: var(--glowing-bxs);
+}
+
+
+
+
+
+/* ______footer section end______ */
+
+
+
+/* media queries медиа-запросы*/
+@media (max-width: 1480px) {
+    .home {
+        padding: 2rem 7rem;
+    }
+}
+
+@media (max-width: 1175px) {
+
+    .home h3 {
+        font-size: var(--heading); 
+    }
+}
+
+
+@media (max-width: 991px) {
+    /* header исчезает при сужении до 990px */
+    header {
+        left: -120%;
+    }
+    /* кнопка меню появляется */
+    #menu {
+        display: block;
+    }
+
+    header.active {
+        left: 0;
+    }
+
+    body {
+        padding: 0;   
+    }
+
+}
+
+@media (max-width: 500px) {
+    .home h3 {
+        font-size: var(--medium-fz); 
+    }
+    #circle {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    header {
+        width: 100vw;
+    }    
+}
+
